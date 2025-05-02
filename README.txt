@@ -26,6 +26,8 @@ This is some more text. Markdown also allows you to write words in bold by surro
 
 ## This is an example subheading
 By prefixing a line with two hashes, you can denote a subheading (level 2 heading). You can technically go further with three hashes to denote a sub-sub heading however this is strongly discouraged for Algobility guides as it makes the guide look messy and level 3 headings have a small enough size that they look almost identical to normal text. 
+
+# Code block
 To insert code blocks, enclose all code with three backticks like so:
 \`\`\`cpp
 int main(){
@@ -36,7 +38,21 @@ int main(){
 ALWAYS MAKE SURE THE OPENING THREE BACKTICKS ARE FOLLOWED WITH THE LANGUAGE CODE OF THE CODE BLOCK. Here are the options for language codes
 - cpp for C++ code
 - python for python
-- text for any text that you want to keep in a code block but is not program code. A goood example of this is the input and output of a program. 
+- java for java
+- text for anything that you want to keep in a code block but is not program code. A goood example of this is the input and output of a program or shell prompts
 
+If you do not write the language code next to the starting three back ticks, the first line of the code block will be awkwardly indented.
+
+# Exercises
+It is generally good practice to include exercises (basically easy problems for the topic at hand) to keep the guide interactive and strengthen conceputal understanding.  You can include an exercise with the following syntax:
+
+<Exercise number='1'>
+<ExerciseQuestion>
+This is the question statement of the exercise.  
+</ExerciseQuestion>
+<ExerciseAnswer>
+And this is the answer. It will only be shown when the user clicks 'Reveal Answer'. You can write in markdown in here as well. Often times the answer of an exercise will include solution code which you can put with a code block.
+</ExerciseAnswer>
+</Exercise>
 
 ```
