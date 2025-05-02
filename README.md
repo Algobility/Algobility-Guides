@@ -26,7 +26,7 @@ is generally a good way to start a guide. Under this heading you can talk
 about an example of a problem where the naive solution would be too costly.
 
 # This is another heading
-This is some more text. Markdown also allows you to write words in bold by
+Markdown also allows you to write words in bold by
 surrounding them with asteriks *like so*. To write some text in italics,
 surround the text with two asteriks **like so**. Use italic text for quoting
 problem statements, notes, etc. Optionally use bold text to emphasize ideas
