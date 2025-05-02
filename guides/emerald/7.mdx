@@ -1,0 +1,65 @@
+---
+title: Dynamic Programming applications
+credits: Ahmad Bilal
+description:  Knapsack, Bitmask, and Range DP problems
+date: '2022-01-01'
+practicable: true
+---
+
+# Knapsack DP
+Imagine you are a thief who has broken into a store. You have a bag that can carry up to a certain weight, and you want to steal the most valuable items without exceeding this weight limit. Each item has a weight and a value. The goal is to maximize the total value of stolen goods while ensuring that their combined weight does not exceed the bag's limit.
+
+This is the classical version of the Knapsack Problem. Given a set of items, each with a weight and a value, and a knapsack with a weight limit, we must find the maximum possible value we can achieve without exceeding the weight limit. 
+
+There are many variations of knapsack problems, each with different constraints and solution techniques:
+
+1. 0/1 Knapsack: Either take an item completely or leave it.
+2. Fractional Knapsack: Items can be taken partially (solvable greedily).
+3. Bounded Knapsack: Each item has a limited quantity.
+4. Unbounded Knapsack: Each item can be taken an unlimited number of times.
+5. Multi-Dimensional Knapsack: Multiple constraints instead of just one (e.g., weight and volume).
+6. Subset Sum: A special case where each item has a weight but no value (just determine if a certain weight sum is possible).
+7. Knapsack with Dependencies: Items depend on each other (e.g., you can’t take item B without taking item A).
+
+Knapsack-type problems can generally be solved efficiently using dynamic programming. The following is an approach for the 0/1 variation of the problem.
+
+# Understanding the 0/1 Knapsack  
+
+Given `N` items, each with:  
+
+- Weight: `weight[i]`  
+- Value: `value[i]`  
+- Knapsack Capacity: `W`  
+
+We must **maximize total value** while ensuring the total weight does not exceed `W`.  
+
+# Example  
+
+```text
+Item 1: Weight = 2, Value = 3  
+Item 2: Weight = 3, Value = 4  
+Item 3: Weight = 4, Value = 5  
+Item 4: Weight = 5, Value = 8  
+```
+
+If `W = 5`, we must pick the best combination. The optimal solution is taking **Item 4 alone** (value `8`).  
+
+# Dynamic Programming Approach  
+
+We define `dp[i][w]` as the **maximum value achievable using the first `i` items and a knapsack of capacity `w`**.  
+
+The recurrence follows:  
+
+<Math block> dp[i][w] = \max(dp[i-1][w], dp[i-1][w - weight[i]] + value[i]) </Math>
+
+Base case:  
+
+<Math block> dp[0][w] = 0</Math> 
+The base case applies if no items or weight capacity is zero.
+
+This ensures that at every step, we either:  
+
+1. **Skip the item**: Use the best value found so far (`dp[i-1][w]`).  
+2. **Take the item (if it fits)**: Add its value to the best value achievable with remaining capacity (`dp[i-1][w - weight[i]] + value[i]`).  
+
+
