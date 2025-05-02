@@ -21,7 +21,7 @@ Guides are written in markdown and so all markdown formatting rules apply.  For 
 For many guides 'Motivation' is the first heading. This is because giving the motivation for why an idea is needed is generally a good way to start a guide. Under this heading you can talk about an example of a problem where the naive solution would be too costly.
 
 # This is another heading
-This is some more text. Markdown also allows you to write words in bold by surrounding them with asteriks *like so*. To write some text in italics, surround the text with two asteriks **like so**.
+This is some more text. Markdown also allows you to write words in bold by surrounding them with asteriks *like so*. To write some text in italics, surround the text with two asteriks **like so**. Use italic text for quoting problem statements, notes, etc. Optionally use bold text to emphasize ideas and when introducing new terms. As a general rule of thumb, the less bold words in a guide, the better. To insert in-line code, surround the text with single backticks \`like so\`. Use this when refering to a small snippet of code (e.g. a function call, a condition, etc. )
 
 
 ## This is an example subheading
@@ -54,5 +54,11 @@ This is the question statement of the exercise.
 And this is the answer. It will only be shown when the user clicks 'Reveal Answer'. You can write in markdown in here as well. Often times the answer of an exercise will include solution code which you can put with a code block.
 </ExerciseAnswer>
 </Exercise>
+
+# Math
+Math expressions can be written in-line like so <Math inline>2n + 1</Math> or on a new line and centered like so
+<Math block>n^2 + 2n + 3</Math>
+
+Anything enclosed between math tags is rendered using mathJax. Check the mathjax documentation to learn more about how to format mathematical expressions. All mathematical variables should be enclosed in math tags (including common variables in problems such as n, x, a, b,  etc.). Moreover time complexities in Big-O notation should also be written in math tags (e.g. write  <Math inline>O(n^2)</Math>  )
 
 ```
