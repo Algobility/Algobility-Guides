@@ -1,0 +1,79 @@
+---
+title: Ad Hoc
+description: Tackle problems with new, unexplored ideas
+date: '2025-05-03'
+practicable: true
+credits: Siddhant Arora
+---
+
+
+# Ad-Hoc
+
+Many problems you will encounter in your Competitive Programming journey will be Ad-Hoc Problems.
+
+These are problems with ideas that do not fall into **standard categories** and instead, require you to produce **new and creative** solutions to tackle the problem.
+It may not come as a surprise that a lot of problems may be classified as Ad-Hoc. They generally may be quite difficult to deal with due to their *unknown* nature. Here are some tips on how you can tackle them.
+
+1. Read the problem carefully and think about it for a bit.
+2. Write out some small sample cases and solve them manually. It is quite likely that the way you solve them manually is the approach in the solution.
+3. Make some key observations or lemma. Again, you will only get this by tinkering around and understanding the problem.
+4. Once you feel you have an approach, think formally and in code about how you will implement it.
+
+
+# Examples
+
+<Exercise>
+
+Related or not?
+
+<ExerciseQuestion>
+
+Given two positive integers, <Math inline> x, y </Math>, (1 <= **x, y** <= <Math inline> 2 * 10^5 </Math>) find out whether or not they are *relatively prime*.
+
+**Note**:
+
+Two integers, <Math inline> x, y </Math> are relatively prime if and only if the **only** factor they share is 1.
+
+#Input:
+
+Two integers, <Math inline>x, y</Math> respectively. (1 <= **x, y** <= <Math inline> 2 * 10^5 </Math>)
+
+#Output:
+
+Print **'YES'** (without quotes) if x and y are relatively prime, otherwise, print 'NO' (without quotes).
+
+</ExerciseQuestion>
+
+<ExerciseAnswer>
+
+#Solution:
+
+Since the problem talks about factors and integers, a natural thought may be to find the factors of <Math inline> x and y </Math>. To re-iterate, try whatever comes to mind, one approach may be correct.
+
+We will store the factors of both x and y in two *integer arrays*. Now the question arises, how would we find their factors.
+Since both x and y are relatively small, it suffices to find their factors in <Math inline>O(n)</Math>, i.e, linear time. We can run for loops from 1 to x (same with y) and if x % i == 0 (i.e, the remainder of x and i is 0),
+we add i to the array for the factors of x. We do the same with y. (To optimize, you may run the for loop from 1 to $\sqrt{x}$ and when x % i == 0, add both i and x//i)
+
+What remains is to figure out if x and y share only 1 as a common factor. You can do this by taking the intersection of both the arrays. The intersection essentially only leaves the elements common to both
+sets, and for x and y to be relatively prime, the intersection must share only one element, i.e., 1. So, we do factorsx.intersection(factors) and check if the length is 1.
+</ExerciseAnswer>
+</Exercise>
+
+```python
+x, y = map(int,input().split()))
+factorsx,factorsy = [],[]
+
+for i in range(1,x+1):
+    if x % i == 0:
+        factorsx.append(i)
+
+for i in range(1,y+1):
+    if y % i == 0:
+        factorsy.append(i)
+
+if len(set(factorsx).intersection(set(factorsy))) == 1:
+    print("YES")
+else:
+    print("NO")
+
+```
