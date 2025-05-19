@@ -2,6 +2,12 @@
 
 A github repository to allow collaborative work on the guides at [algobility.dev](https://www.algobility.dev/). To edit the guides, submit a pull request. The latest version of guides should get updated on the website within 24 hours.
 
+# To-DO
+The main task that we need to knock out before official launch is to 
+a) Ensure all explanations are intuitive and easy to understand. If some wording seems ambiguous or generally not well-phrased, it needs to be edited.
+b) Fill the guides with more exercises to strengthen conceptual understanding. Generally, the more exercises, the better
+c) Fill the guides for ranks above silver/gold with more nuanced example problems. Most example problems given in the guides currently are, to some extent, trivial. Slightly harder problems and their solutions would help make these guides much more valuable.
+
 # Formatting
 
 Guides are written in markdown. The following section explains the format of an example Algobility guide on prefix sums and also covers the main things you need to know to write in markdown.  
